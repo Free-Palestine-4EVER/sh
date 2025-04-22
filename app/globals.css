@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 15, 23, 42;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  height: 100vh;
+  overflow: hidden;
+}
+
+.chat-container {
+  height: calc(100vh - 60px);
+}
+
+.message-input {
+  resize: none;
+}
+
+.message-bubble {
+  max-width: 80%;
+  word-break: break-word;
+  border-radius: 1rem;
+}
+
+.message-image {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 8px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Heart reaction color */
+.text-red-500.fill-red-500 {
+  fill: rgb(239, 68, 68);
+  color: rgb(239, 68, 68);
+}
+
+/* Dark mode fixes */
+.dark {
+  color-scheme: dark;
+}
+
+.dark * {
+  --tw-border-opacity: 0.2;
+}
+
+.dark .bg-white {
+  background-color: rgb(15, 23, 42);
+}
+
+.dark .text-black,
+.dark .text-gray-900,
+.dark .text-gray-800 {
+  color: rgb(255, 255, 255);
+}
+
+.dark .text-gray-700 {
+  color: rgb(226, 232, 240);
+}
+
+.dark .text-gray-600 {
+  color: rgb(203, 213, 225);
+}
+
+.dark .text-gray-500 {
+  color: rgb(148, 163, 184);
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: rgba(51, 65, 85, 0.5);
+}
+
+.dark .bg-gray-50 {
+  background-color: rgb(30, 41, 59);
+}
+
+.dark .bg-gray-100 {
+  background-color: rgb(51, 65, 85);
+}
+
+.dark .hover\:bg-gray-50:hover {
+  background-color: rgb(51, 65, 85);
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgb(71, 85, 105);
+}
+
+/* Fix for inputs and textareas in dark mode */
+.dark input,
+.dark textarea {
+  color: white;
+  background-color: rgb(30, 41, 59);
+  border-color: rgba(51, 65, 85, 0.8);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgb(148, 163, 184);
+}
+
+/* Fix for buttons in dark mode */
+.dark button {
+  color: white;
+}
+
+.dark button[data-variant="ghost"]:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Primary button in dark mode - white with black text */
+.dark button[type="submit"],
+.dark .btn-primary {
+  background-color: white;
+  color: black;
+}
+
+.dark button[type="submit"]:hover,
+.dark .btn-primary:hover {
+  background-color: rgb(226, 232, 240);
+  color: black;
+}
+
+.dark button[type="submit"]:disabled,
+.dark .btn-primary:disabled {
+  background-color: rgb(148, 163, 184);
+  color: rgb(51, 65, 85);
+  opacity: 0.7;
+}
+
+/* Fix for emoji picker in dark mode */
+.dark .EmojiPickerReact {
+  --epr-bg-color: rgb(30, 41, 59);
+  --epr-text-color: white;
+  --epr-search-input-bg-color: rgb(51, 65, 85);
+  --epr-category-label-bg-color: rgb(30, 41, 59);
+}

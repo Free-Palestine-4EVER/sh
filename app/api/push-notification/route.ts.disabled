@@ -1,0 +1,11 @@
+// This is a temporary file to disable push notifications during build
+// Rename this file to route.ts and rename the original route.ts to route.ts.original
+// when you want to disable push notifications
+
+import { NextResponse } from "next/server"
+
+export async function POST(request: Request) {
+  return NextResponse.json({ 
+    error: "Push notifications are temporarily disabled" 
+  }, { status: 503 })
+}

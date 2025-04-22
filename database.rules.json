@@ -1,0 +1,23 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    "users": {
+      ".read": "auth != null",
+      "$userId": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid === $userId"
+      }
+    },
+    "presence": {
+      ".read": "auth != null",
+      "$userId": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid === $userId"
+      }
+    },
+    "chats": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}
